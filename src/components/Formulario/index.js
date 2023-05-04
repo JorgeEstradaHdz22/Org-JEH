@@ -1,15 +1,18 @@
+/*Cruso: React: Como los componentes funcionan Aula 01. Creando los equipo*/
+/*Video 05. Refactorizando el código*/
+
 import {useState} from "react";
 import './Formulario.css';
 import CampoTexto from '../CampoTexto';
 import ListaOpciones from '../ListaOpciones';
 import Boton from '../Boton';
 
-const Formulario = () =>{
+const Formulario = (props) =>{
 
     const [nombre,actualizarNombre] = useState('');
     const [puesto,actualizarPuesto] = useState('');
     const [foto,actualizarFoto] = useState('');
-    const [equipo,actualizarEquipo] = useState('Programación');
+    const [equipo,actualizarEquipo] = useState('');
 
     const manejarEnvio = (e) => {
         e.preventDefault();
@@ -50,6 +53,7 @@ const Formulario = () =>{
             <ListaOpciones
                 valor={equipo}
                 actualizarEquipo={actualizarEquipo}
+                equipos={props.equipos}/*Recibimos mediante props y se lo enviamos a Lista Opciones*/
             />
             <Boton>
                 Crear

@@ -1,22 +1,69 @@
+/*Cruso: React: Como los componentes funcionan Aula 01. Creando los equipo*/
+/*Video 02. Componente equipo*/
+
 import {useState} from 'react';
 import './App.css';
 import Header from  './components/Header';
 import Formulario from './components/Formulario';
 import MiOrg from './components/MiOrg';
+import Equipo from './components/Equipo';
 
 function App() {
 
-  const [mostrarFormulario,actualizarMostrar] = useState(true);
+  const [mostrarFormulario,actualizarMostrar] = useState(false);
 
   const cambiarMostrar = () => {
     actualizarMostrar(!mostrarFormulario);
-  }
+  };
+  /*Video 03. Creando equipos*/
+  //Creación de un arreglo que contiene objetos con los respectivos valores de los equipos, el nombre, el color de fondo y el color de subrayado
+  const equipos = [
+    {
+      titulo:'Programación',
+      colorPrimario:'#57C278',//color de subrayado, destaque
+      colorSecundario:'#D9F7E9'//color de fondo
+    },
+    {
+      titulo:'Front End',
+      colorPrimario:'#82CFFA',
+      colorSecundario:'#E8F8FF'
+    },
+    {
+      titulo:'Data Science',
+      colorPrimario:'#A6D157',
+      colorSecundario:'#F0F8E2'
+    },
+    {
+      titulo:'Devops',
+      colorPrimario:'#E06B69',
+      colorSecundario:'#FDE7E8'
+    },
+    {
+      titulo:'UX y Diseño',
+      colorPrimario:'#DB6EBF',
+      colorSecundario:'#FAE9F5'
+    },
+    {
+      titulo:'Móvil',
+      colorPrimario:'#FFBA05',
+      colorSecundario:'#FFF5D9'
+    },
+    {
+      titulo:'Inovación y Gestión',
+      colorPrimario:'#FF8A29',
+      colorSecundario:'#FFEEDF'
+    }
+];
 
+/*Video 05. Refactorizando el código*/
   return (
     <div>
       <Header />
-      {mostrarFormulario && <Formulario />}
+      {mostrarFormulario && <Formulario equipos={equipos.map((equipo) => equipo.titulo)}/>}{/*Enviamos los datos al Formulario los datos del array solamante los titulos*/}
       <MiOrg cambiarMostrar={cambiarMostrar} />
+      
+      {equipos.map((equipo) => <Equipo datos={equipo}  key={equipo.titulo} />)}{/*Enviar mediante props al componente Equipo agrgar un identificador(key)*/}  
+
     </div>
   );
 }

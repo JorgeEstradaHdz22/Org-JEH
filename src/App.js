@@ -1,5 +1,5 @@
-/*Cruso: React: Como los componentes funcionan Aula 01. Creando los equipo*/
-/*Video 02. Componente equipo*/
+/*Cruso: React: Como los componentes funcionan Aula 02. Version Uno Proyecto*/
+/*Video 02. Registrando Colaborador*/
 
 import {useState} from 'react';
 import './App.css';
@@ -15,8 +15,7 @@ function App() {
   const cambiarMostrar = () => {
     actualizarMostrar(!mostrarFormulario);
   };
-  /*Video 03. Creando equipos*/
-  //Creación de un arreglo que contiene objetos con los respectivos valores de los equipos, el nombre, el color de fondo y el color de subrayado
+  
   const equipos = [
     {
       titulo:'Programación',
@@ -55,14 +54,13 @@ function App() {
     }
 ];
 
-/*Video 05. Refactorizando el código*/
   return (
     <div>
       <Header />
-      {mostrarFormulario && <Formulario equipos={equipos.map((equipo) => equipo.titulo)}/>}{/*Enviamos los datos al Formulario los datos del array solamante los titulos*/}
+      {mostrarFormulario && <Formulario equipos={equipos.map((equipo) => equipo.titulo)}/>}
       <MiOrg cambiarMostrar={cambiarMostrar} />
       
-      {equipos.map((equipo) => <Equipo datos={equipo}  key={equipo.titulo} />)}{/*Enviar mediante props al componente Equipo agrgar un identificador(key)*/}  
+      {equipos.map((equipo) => <Equipo datos={equipo}  key={equipo.titulo} />)}
 
     </div>
   );

@@ -1,5 +1,4 @@
-/*Cruso: React: Como los componentes funcionan Aula 01. Creando los equipo*/
-/*Video 05. Refactorizando el código*/
+/*Cruso: React: Como los componentes funcionan Aula 02. Version Uno Proyecto*/
 
 import {useState} from "react";
 import './Formulario.css';
@@ -14,6 +13,9 @@ const Formulario = (props) =>{
     const [foto,actualizarFoto] = useState('');
     const [equipo,actualizarEquipo] = useState('');
 
+    const {registrarColaborador} = props
+
+    /*Video 02. Registrando Colaborador*/
     const manejarEnvio = (e) => {
         e.preventDefault();
         console.log('Manejar Envio');
@@ -23,7 +25,8 @@ const Formulario = (props) =>{
             foto,
             equipo
         }
-        console.log(datosAEnviar)
+        /*console.log(datosAEnviar)*/
+        registrarColaborador(datosAEnviar);
     };
 
     return <section className="formulario">
@@ -53,7 +56,7 @@ const Formulario = (props) =>{
             <ListaOpciones
                 valor={equipo}
                 actualizarEquipo={actualizarEquipo}
-                equipos={props.equipos}/*Recibimos mediante props y se lo enviamos a Lista Opciones*/
+                equipos={props.equipos}
             />
             <Boton>
                 Crear

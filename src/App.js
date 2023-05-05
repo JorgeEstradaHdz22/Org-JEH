@@ -1,4 +1,4 @@
-/*Cruso: React: Como los componentes funcionan Aula 03. ¿Que son los componentes?*/
+/*Cruso: React: Como los componentes funcionan Aula 04. ¿Cómo React ve un componente?*/
 
 import {useState} from 'react';
 import './App.css';
@@ -54,11 +54,9 @@ function App() {
     actualizarColaboradores([...colaboradores,colaborador]);
   };
 
-  //Video 03. Enviando prop
   //Eliminar colaborador
-  //Funcion para eliminar las cards de los colaboradores
   const eliminarColaborador = () => {
-    console.log('Eliminar colaborador');//Lo que se muestra despues de disparar el evento que esta dentro del componente Colaborador
+    console.log('Eliminar colaborador');
   };
 
   //Lista Equipos (Array)
@@ -116,13 +114,12 @@ function App() {
         equipos.map((equipo) => <Equipo 
           datos={equipo}
           key={equipo.titulo} 
-          colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}/*Hacemos uso de .filter para que los colaboradores solo aparezcan en los equipos a los que pertencen*/
-          //Video 03. Enviando prop
-          eliminarColaborador={eliminarColaborador}//Envio de la funcion eliminarColaborador mediante una prop hacia el componente Equipo
+          colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}
+          eliminarColaborador={eliminarColaborador}
         /> 
         )
       }
-
+      
       <Footer />
     </div>
   );

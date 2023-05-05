@@ -1,5 +1,3 @@
-/*Video 06. Footer*/
-
 import './Footer.css'
 
 const Footer = () => {

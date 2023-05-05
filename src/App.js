@@ -1,4 +1,4 @@
-/*Cruso: React: Como los componentes funcionan Aula 02. Version Uno Proyecto*/
+/*Cruso: React: Como los componentes funcionan Aula 03. ¿Que son los componentes?*/
 
 import {useState} from 'react';
 import './App.css';
@@ -11,8 +11,6 @@ import Footer from './components/Footer';
 function App() {
 
   const [mostrarFormulario,actualizarMostrar] = useState(false);
-
-  /*Video 06. Footer Creacion de un objeto para que aparezca por defecto cierto colaborador*/
   const [colaboradores,actualizarColaboradores] = useState([{
     nombre: 'Jorge Estrada',
     puesto: 'Estudiante',
@@ -24,12 +22,8 @@ function App() {
     actualizarMostrar(!mostrarFormulario);
   };
 
-  /*Video 02. Registrando Colaborador*/
-  //Registrar Colaborador
-
   const registrarColaborador = (colaborador) => {
     console.log ('Nuevo Colaborador',colaborador);
-    //Spread operator crea una copia de los calores actulaes u agrega colaborador
     actualizarColaboradores([...colaboradores,colaborador]);
   }
   
@@ -82,10 +76,7 @@ function App() {
       }
 
       <MiOrg cambiarMostrar={cambiarMostrar} />
-      
-      {/*Video 03. Mostrando Colaboradores*/}
 
-      {/*Video 04. Filtrando Equipos*/}
       {
         equipos.map((equipo) => <Equipo 
           datos={equipo}
@@ -94,8 +85,6 @@ function App() {
         />
         )
       }
-
-      {/*Video 06. Footer*/}
 
       <Footer />
     </div>

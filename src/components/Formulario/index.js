@@ -1,5 +1,3 @@
-/*Cruso: React: Como los componentes funcionan Aula 02. Version Uno Proyecto*/
-
 import {useState} from "react";
 import './Formulario.css';
 import CampoTexto from '../CampoTexto';
@@ -15,7 +13,6 @@ const Formulario = (props) =>{
 
     const {registrarColaborador} = props
 
-    /*Video 02. Registrando Colaborador*/
     const manejarEnvio = (e) => {
         e.preventDefault();
         console.log('Manejar Envio');
@@ -25,7 +22,6 @@ const Formulario = (props) =>{
             foto,
             equipo
         }
-        /*console.log(datosAEnviar)*/
         registrarColaborador(datosAEnviar);
     };
 

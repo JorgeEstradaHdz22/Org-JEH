@@ -1,9 +1,10 @@
-/*Cruso: React: Como los componentes funcionan Aula 02. Version Uno Proyecto*/
-/*Video 02. Registrando Colaborador*/
+/*Curso: React: Como los componentes funcionan Aula 03. ¿Que son los componentes?*/
+/*Video 04. Instalando iconos*/
 
 .colaborador{
     width: 280px;
     margin-bottom: 24px;
+    position: relative;
 }
 
 .colaborador .encabezado{
@@ -43,4 +44,10 @@
     padding: 0 24px;
     font-weight: 400;
     margin: 0;
+}
+
+.eliminar{
+    position: absolute;
+    right: -15px;
+    top: -15px;
 }

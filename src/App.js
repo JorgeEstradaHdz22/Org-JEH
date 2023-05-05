@@ -12,21 +12,56 @@ function App() {
 
   const [mostrarFormulario,actualizarMostrar] = useState(false);
   const [colaboradores,actualizarColaboradores] = useState([{
-    nombre: 'Jorge Estrada',
-    puesto: 'Estudiante',
-    foto: 'https://github.com/JorgeEstradaHdz22.png',
-    equipo: 'Front End'
-  }])
-
+    equipo: 'Front End',
+    foto: 'https://github.com/harlandlohora.png',
+    nombre: 'Harland Lohora',
+    puesto: 'Instructor'
+  },
+  {
+    equipo: 'Programación',
+    foto: 'https://github.com/genesysaluralatam.png',
+    nombre: 'Genesys Rondón',
+    puesto: 'Desarrolladora de software e instructora'
+  },
+  {
+    equipo: 'UX y Diseño',
+    foto: 'https://github.com/JeanmarieAluralatam.png',
+    nombre: 'Jeanmarie Quijada',
+    puesto: 'Instructora en Alura Latam'
+  },
+  {
+    equipo: 'Programación',
+    foto: 'https://github.com/christianpva.png',
+    nombre: 'Christian Velasco',
+    puesto: 'Head de Alura e Instructor'
+  },
+  {
+    equipo: 'Inovación y Gestión',
+    foto: 'https://github.com/JoseDarioGonzalezCha.png',
+    nombre: 'Jose Gonzalez',
+    puesto: 'Dev FullStack'
+  }
+  ])
+  //Ternario -->Condicion ? se muestra : noSeMuestra
+  //condición && seMuestra
   const cambiarMostrar = () => {
     actualizarMostrar(!mostrarFormulario);
   };
 
+  //Registrar Colaborador
   const registrarColaborador = (colaborador) => {
     console.log ('Nuevo Colaborador',colaborador);
     actualizarColaboradores([...colaboradores,colaborador]);
-  }
-  
+  };
+
+  //Video 03. Enviando prop
+  //Eliminar colaborador
+  //Funcion para eliminar las cards de los colaboradores
+  const eliminarColaborador = () => {
+    console.log('Eliminar colaborador');//Lo que se muestra despues de disparar el evento que esta dentro del componente Colaborador
+  };
+
+  //Lista Equipos (Array)
   const equipos = [
     {
       titulo:'Programación',
@@ -82,7 +117,9 @@ function App() {
           datos={equipo}
           key={equipo.titulo} 
           colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}/*Hacemos uso de .filter para que los colaboradores solo aparezcan en los equipos a los que pertencen*/
-        />
+          //Video 03. Enviando prop
+          eliminarColaborador={eliminarColaborador}//Envio de la funcion eliminarColaborador mediante una prop hacia el componente Equipo
+        /> 
         )
       }
 

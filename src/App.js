@@ -1,4 +1,5 @@
 /*Cruso: React: Como los componentes funcionan Aula 04. ¿Cómo React ve un componente?*/
+//Video 03. Actulizar Equipos
 
 import {useState} from 'react';
 import './App.css';
@@ -42,25 +43,9 @@ function App() {
     puesto: 'Dev FullStack'
   }
   ])
-  //Ternario -->Condicion ? se muestra : noSeMuestra
-  //condición && seMuestra
-  const cambiarMostrar = () => {
-    actualizarMostrar(!mostrarFormulario);
-  };
 
-  //Registrar Colaborador
-  const registrarColaborador = (colaborador) => {
-    console.log ('Nuevo Colaborador',colaborador);
-    actualizarColaboradores([...colaboradores,colaborador]);
-  };
-
-  //Eliminar colaborador
-  const eliminarColaborador = () => {
-    console.log('Eliminar colaborador');
-  };
-
-  //Lista Equipos (Array)
-  const equipos = [
+  //Video 05. Actulizando Color
+  const [equipos,actulizarEquipos] = useState ([
     {
       titulo:'Programación',
       colorPrimario:'#57C278',
@@ -96,7 +81,41 @@ function App() {
       colorPrimario:'#FF8A29',
       colorSecundario:'#FFEEDF'
     }
-  ];
+  ]);
+
+  //Ternario -->Condicion ? se muestra : noSeMuestra
+  //condición && seMuestra
+  const cambiarMostrar = () => {
+    actualizarMostrar(!mostrarFormulario);
+  };
+
+  //Registrar Colaborador
+  const registrarColaborador = (colaborador) => {
+    console.log ('Nuevo Colaborador',colaborador);
+    actualizarColaboradores([...colaboradores,colaborador]);
+  };
+
+  //Eliminar colaborador
+  const eliminarColaborador = () => {
+    console.log('Eliminar colaborador');
+  };
+
+  //Actulaizar el color del Equipo
+  //Creacion de la funcion actualizarColor
+  //Video 05. Actulizando Color
+  //Modificacion de la funcion recorriendo el arreglo que esta en el estado
+  const actualizarColor = (color,titulo) => {
+    console.log('Actualizar: ',color,titulo)
+    const equiposActualizados = equipos.map((equipo) => {
+      if(equipo.titulo === titulo){
+        equipo.colorPrimario = color
+      }
+
+      return equipo
+    })
+
+    actulizarEquipos(equiposActualizados)
+  };
 
   return (
     <div>
@@ -116,6 +135,7 @@ function App() {
           key={equipo.titulo} 
           colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}
           eliminarColaborador={eliminarColaborador}
+          actualizarColor={actualizarColor}//Envio de la funcion actulizarColor mediante props al componente Equipo 
         /> 
         )
       }

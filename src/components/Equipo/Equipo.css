@@ -1,9 +1,19 @@
+/*Cruso: React: Como los componentes funcionan Aula 04. ¿Cómo React ve un componente?*/
+/*Video 02. Input Color*/
+
 .equipo{
     width: 100%;
     padding: 32px;
     box-sizing: border-box;
     text-align: center;
     font-size: 32px;
+    position: relative;
+}
+
+.input-color{
+    position: absolute;
+    top: 20px;
+    right: 50px;
 }
 
 .equipo h3{

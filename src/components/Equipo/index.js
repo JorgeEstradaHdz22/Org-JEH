@@ -1,12 +1,12 @@
 /*Cruso: React: Como los componentes funcionan Aula 05. Creando Funcionalidades*/
-//Video 02. Creando IDS
 
 import './Equipo.css';
 import Colaborador from '../Colaborador';
 import hexToRgba from 'hex-to-rgba';
 
 const Equipo = (props) => {
-    const {titulo,colorPrimario,colorSecundario} = props.datos;
+    //Video 02. Creando IDS
+    const {titulo,colorPrimario,colorSecundario,id} = props.datos;
     const {colaboradores,eliminarColaborador,actualizarColor} = props;
     const obj = { backgroundColor: hexToRgba(colorPrimario,0.6)};
     const estiloTitulo = { borderColor: colorPrimario };
@@ -20,7 +20,7 @@ const Equipo = (props) => {
                         className='input-color'
                         value={colorPrimario}
                         onChange={(event) => {
-                            actualizarColor(event.target.value,titulo)
+                            actualizarColor(event.target.value,id)
                         }}
                     
                     />

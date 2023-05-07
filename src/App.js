@@ -1,5 +1,5 @@
-/*Cruso: React: Como los componentes funcionan Aula 04. ¿Cómo React ve un componente?*/
-//Video 03. Actulizar Equipos
+/*Cruso: React: Como los componentes funcionan Aula 05. Creando Funcionalidades*/
+//Video 02. Creando IDS
 
 import {useState} from 'react';
 import './App.css';
@@ -44,7 +44,6 @@ function App() {
   }
   ])
 
-  //Video 05. Actulizando Color
   const [equipos,actulizarEquipos] = useState ([
     {
       titulo:'Programación',
@@ -101,9 +100,6 @@ function App() {
   };
 
   //Actulaizar el color del Equipo
-  //Creacion de la funcion actualizarColor
-  //Video 05. Actulizando Color
-  //Modificacion de la funcion recorriendo el arreglo que esta en el estado
   const actualizarColor = (color,titulo) => {
     console.log('Actualizar: ',color,titulo)
     const equiposActualizados = equipos.map((equipo) => {
@@ -135,7 +131,7 @@ function App() {
           key={equipo.titulo} 
           colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}
           eliminarColaborador={eliminarColaborador}
-          actualizarColor={actualizarColor}//Envio de la funcion actulizarColor mediante props al componente Equipo 
+          actualizarColor={actualizarColor}
         /> 
         )
       }

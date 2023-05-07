@@ -1,5 +1,5 @@
-/*Cruso: React: Como los componentes funcionan Aula 04. ¿Cómo React ve un componente?*/
-//Video 02. Input Color
+/*Cruso: React: Como los componentes funcionan Aula 05. Creando Funcionalidades*/
+//Video 02. Creando IDS
 
 import './Equipo.css';
 import Colaborador from '../Colaborador';
@@ -7,23 +7,20 @@ import hexToRgba from 'hex-to-rgba';
 
 const Equipo = (props) => {
     const {titulo,colorPrimario,colorSecundario} = props.datos;
-    const {colaboradores,eliminarColaborador,actualizarColor} = props;//Destructuracion de la función actulizarColor
-    const obj = { backgroundColor: hexToRgba(colorPrimario,0.6)};//Video 05. Actulizando color
+    const {colaboradores,eliminarColaborador,actualizarColor} = props;
+    const obj = { backgroundColor: hexToRgba(colorPrimario,0.6)};
     const estiloTitulo = { borderColor: colorPrimario };
 
     return <>
         {
             colaboradores.length > 0 &&
                 <section className="equipo" style={obj}>
-                    {/*Creamos un input de tipo color*/}
                     <input 
                         type='color'
-                        className='input-color'//Agregamos el nombre de la clase para darle el estilo
-                        value={colorPrimario}//Video 05. Actulizando color
+                        className='input-color'
+                        value={colorPrimario}
                         onChange={(event) => {
-                            /*console.log(event.target.value)*/
-                            //Video 03. Actulizar equipos
-                            actualizarColor(event.target.value,titulo)//uso de la funcion actualizarColor
+                            actualizarColor(event.target.value,titulo)
                         }}
                     
                     />

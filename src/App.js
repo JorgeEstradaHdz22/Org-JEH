@@ -112,8 +112,12 @@ function App() {
   };
 
   //Eliminar colaborador
-  const eliminarColaborador = () => {
-    console.log('Eliminar colaborador');
+  //Video 03. Eliminar Colaboradores
+  const eliminarColaborador = (id) => {
+    console.log('Eliminar colaborador',id);
+    const nuevosColaboradores = colaboradores.filter((colaborador) => colaborador.id !== id)
+    /*console.log(nuevosColaboradores)*/
+    actualizarColaboradores(nuevosColaboradores)
   };
 
   //Actulaizar el color del Equipo

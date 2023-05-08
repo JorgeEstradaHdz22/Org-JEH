@@ -119,7 +119,6 @@ function App() {
   };
 
   //Actulaizar el color del Equipo
-  //cambiando titulo por el id
   const actualizarColor = (color,id) => {
     console.log('Actualizar: ',color,id)
     const equiposActualizados = equipos.map((equipo) => {

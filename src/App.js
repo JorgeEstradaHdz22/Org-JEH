@@ -52,7 +52,7 @@ function App() {
   ])
 
   //Asignación de la funcion uuid() para generar un id unico para el equipo de Programación
-  const [equipos,actulizarEquipos] = useState ([
+  const [equipos,actualizarEquipos] = useState ([
     {
       id: uuid(),
       titulo:'Programación',
@@ -108,7 +108,7 @@ function App() {
   //Registrar Colaborador
   const registrarColaborador = (colaborador) => {
     console.log ('Nuevo Colaborador',colaborador);
-    actualizarColaboradores([...colaboradores,colaborador,]);
+    actualizarColaboradores([...colaboradores,{...colaborador,id:uuid()}]);
   };
 
   //Eliminar colaborador
@@ -132,8 +132,15 @@ function App() {
       return equipo
     })
 
-    actulizarEquipos(equiposActualizados)
+    actualizarEquipos(equiposActualizados)
   };
+
+  //Video 05.Creando Equipo
+  //Crear equipo
+  const crearEquipo = (nuevoEquipo) => {
+    console.log(nuevoEquipo)
+    actualizarEquipos([...equipos,{...nuevoEquipo,id:uuid()}])//checar para colaborador
+  }
 
   return (
     <div>
@@ -142,6 +149,7 @@ function App() {
         mostrarFormulario && <Formulario 
           equipos={equipos.map((equipo) => equipo.titulo)}
           registrarColaborador={registrarColaborador}
+          crearEquipo={crearEquipo}
         />
       }
 

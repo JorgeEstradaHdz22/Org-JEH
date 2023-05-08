@@ -6,7 +6,8 @@ import hexToRgba from 'hex-to-rgba';
 
 const Equipo = (props) => {
     const {titulo,colorPrimario,colorSecundario,id} = props.datos;
-    const {colaboradores,eliminarColaborador,actualizarColor} = props;
+    //Video 02. Creando Favorito
+    const {colaboradores,eliminarColaborador,actualizarColor,like} = props;//Destructuracion de la funcion like
     const obj = { backgroundColor: hexToRgba(colorPrimario,0.6)};
     const estiloTitulo = { borderColor: colorPrimario };
 
@@ -31,6 +32,7 @@ const Equipo = (props) => {
                                 key={index}
                                 colorPrimario={colorPrimario}
                                 eliminarColaborador={eliminarColaborador}
+                                like={like}//Envio de la función like al componente Colaborador
                             />
                             )
                         }

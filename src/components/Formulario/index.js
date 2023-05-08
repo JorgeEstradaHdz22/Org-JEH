@@ -1,4 +1,4 @@
-/*Cruso: React: Como los componentes funcionan Aula 05. Creando Funcionalidades*/
+/*Cruso: React: Como los componentes funcionan Aula 06. Finalizando el proyecto*/
 
 import {useState} from "react";
 import './Formulario.css';

@@ -1,11 +1,10 @@
-/*Cruso: React: Como los componentes funcionan Aula 05. Creando Funcionalidades*/
+/*Cruso: React: Como los componentes funcionan Aula 06. Finalizando el proyecto*/
 
 import './Equipo.css';
 import Colaborador from '../Colaborador';
 import hexToRgba from 'hex-to-rgba';
 
 const Equipo = (props) => {
-    //Video 02. Creando IDS
     const {titulo,colorPrimario,colorSecundario,id} = props.datos;
     const {colaboradores,eliminarColaborador,actualizarColor} = props;
     const obj = { backgroundColor: hexToRgba(colorPrimario,0.6)};

@@ -1,5 +1,5 @@
-/*Cruso: React: Como los componentes funcionan Aula 05. Creando Funcionalidades*/
-//Video 02. Creando IDS
+/*Cruso: React: Como los componentes funcionan Aula 06. Finalizando el proyecto*/
+//Video 01. Refactorizando el formulario
 
 import {useState} from 'react';
 import {v4 as uuid} from 'uuid';
@@ -112,11 +112,9 @@ function App() {
   };
 
   //Eliminar colaborador
-  //Video 03. Eliminar Colaboradores
   const eliminarColaborador = (id) => {
     console.log('Eliminar colaborador',id);
     const nuevosColaboradores = colaboradores.filter((colaborador) => colaborador.id !== id)
-    /*console.log(nuevosColaboradores)*/
     actualizarColaboradores(nuevosColaboradores)
   };
 
@@ -135,11 +133,10 @@ function App() {
     actualizarEquipos(equiposActualizados)
   };
 
-  //Video 05.Creando Equipo
   //Crear equipo
   const crearEquipo = (nuevoEquipo) => {
     console.log(nuevoEquipo)
-    actualizarEquipos([...equipos,{...nuevoEquipo,id:uuid()}])//checar para colaborador
+    actualizarEquipos([...equipos,{...nuevoEquipo,id:uuid()}])
   }
 
   return (
